@@ -1,0 +1,44 @@
+.details-menu,
+.details-menu summary,
+.details-menu .details-panel {
+    box-sizing: border-box;
+    width: 100%;
+    margin-inline: 0;
+}
+
+.details-menu summary {
+    list-style: none;
+    transition: color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.details-menu summary::-webkit-details-marker {
+    display: none;
+}
+
+.details-menu .details-panel {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+}
+
+.details-menu[open] .details-panel {
+    max-height: 420px;
+    opacity: 1;
+}
+
+.details-menu .details-panel a + a {
+    margin-top: 0.75rem;
+}
+
+.footer-link {
+    color: #4b5563;
+    text-decoration: none;
+    opacity: 0.92;
+    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-link:hover {
+    color: #111827;
+    opacity: 0.75;
+}
