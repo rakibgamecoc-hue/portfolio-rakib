@@ -163,16 +163,180 @@
     transform: translateX(-50%) scale(1.08);
 }
 
-.footer-link {
-    color: #4b5563;
+.site-footer {
+    margin-inline: calc(var(--spacing, 0.25rem) * -6);
+    padding: 4rem 1.5rem 2rem;
+    color: #ffffff;
+    background: #000000;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 2rem 2rem 0 0;
+    box-shadow: 0 -24px 60px rgba(0, 0, 0, 0.14);
+}
+
+.footer-grid {
+    display: grid;
+    gap: 1.25rem;
+}
+
+.footer-brand,
+.footer-column {
+    min-height: 100%;
+    padding: 1.25rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 1.25rem;
+}
+
+.footer-brand {
+    max-width: 28rem;
+}
+
+.footer-logo {
+    display: inline-flex;
+    color: #ffffff;
+    font-size: 1.25rem;
+    font-weight: 600;
     text-decoration: none;
-    opacity: 0.92;
-    transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.footer-brand p {
+    margin-top: 1rem;
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+.footer-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+    padding: 0.65rem 0.9rem;
+    color: #ffffff;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    background: rgba(37, 211, 102, 0.1);
+    border: 1px solid rgba(37, 211, 102, 0.28);
+    border-radius: 9999px;
+}
+
+.footer-status::before {
+    content: "";
+    width: 0.55rem;
+    height: 0.55rem;
+    background: #25d366;
+    border-radius: 9999px;
+    box-shadow: 0 0 0 4px rgba(37, 211, 102, 0.14);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
+}
+
+.footer-column h2 {
+    margin-bottom: 0.4rem;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.footer-link {
+    color: #a1a1aa;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-link:hover {
-    color: var(--slate-950);
-    opacity: 0.75;
+    color: #ffffff;
+    transform: translateX(2px);
+}
+
+.footer-social-link {
+    width: 100%;
+    padding: 0.8rem 0.9rem;
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 9999px;
+}
+
+.footer-social-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 3.5rem;
+    padding-top: 1.5rem;
+    color: #71717a;
+    font-size: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.whatsapp-float {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    z-index: 90;
+    display: inline-flex;
+    width: 3.75rem;
+    height: 3.75rem;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    background: #25d366;
+    border-radius: 9999px;
+    box-shadow: 0 16px 32px rgba(15, 23, 42, 0.18);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast), background-color var(--transition-fast);
+}
+
+.whatsapp-float::before {
+    content: "";
+    position: absolute;
+    inset: -0.45rem;
+    z-index: -1;
+    border-radius: inherit;
+    background: rgba(37, 211, 102, 0.36);
+    animation: whatsappAura 1.8s ease-out infinite;
+}
+
+.whatsapp-float:hover {
+    background: #1ebe5d;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.22);
+    transform: translateY(-3px);
+}
+
+.whatsapp-float:focus-visible {
+    outline: 3px solid rgba(37, 211, 102, 0.35);
+    outline-offset: 4px;
+}
+
+.whatsapp-float svg {
+    width: 2rem;
+    height: 2rem;
+}
+
+@keyframes whatsappAura {
+    0% {
+        opacity: 0.7;
+        transform: scale(0.92);
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        transform: scale(1.35);
+    }
 }
 
 @keyframes fadeInUp {
@@ -210,5 +374,29 @@
 
     .desktop-hire {
         display: none;
+    }
+}
+
+@media (min-width: 40rem) {
+    .site-footer {
+        margin-inline: calc(var(--spacing, 0.25rem) * -8);
+        padding-inline: 2rem;
+    }
+
+    .footer-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
+
+@media (min-width: 64rem) {
+    .site-footer {
+        margin-inline: calc(var(--spacing, 0.25rem) * -10);
+        padding-inline: 2.5rem;
+    }
+
+    .footer-grid {
+        grid-template-columns: minmax(0, 1.5fr) repeat(3, minmax(0, 0.65fr));
     }
 }
