@@ -6,6 +6,7 @@
     --slate-950: #111827;
     --transition-fast: 0.25s ease;
     --transition-menu: 0.35s ease;
+    --default-font-family: "JetBrains Mono", ui-sans-serif, system-ui, sans-serif;
 }
 
 .site-nav {
@@ -136,6 +137,38 @@
     margin-top: 2rem;
     color: #ffffff;
     animation-delay: 0.5s;
+}
+
+.hire-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.9rem 2rem;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background: #111827;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
+    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+}
+
+.hire-cta:hover,
+.hire-cta:focus-visible {
+    background: #0f172a;
+    transform: translateY(-1px);
+}
+
+.hire-cta svg {
+    width: 1rem;
+    height: 1rem;
+    transition: transform 0.25s ease;
+}
+
+.hire-cta:hover svg {
+    transform: translateX(4px);
 }
 
 .details-menu[open] .details-panel a,
